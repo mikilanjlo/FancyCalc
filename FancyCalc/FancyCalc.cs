@@ -75,6 +75,8 @@ namespace FancyCalc
         //generic calc method. usage: "10 + 20"  => result 30
         public double Culculate(string expression)
         {
+            if(expression == null) 
+                throw new ArgumentNullException("expression is null")
             int space = expression.IndexOf(" ");
             while(space>0){
                 expression = expression.Remove(space,1);
@@ -130,6 +132,7 @@ namespace FancyCalc
 
         private char GetSymbol(ref string expression)
         {
+
             string s;
             do
             {
